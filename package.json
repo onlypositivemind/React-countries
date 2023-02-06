@@ -1,0 +1,43 @@
+{
+	"name": "react-countries",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"lint": "eslint -c .eslintrc --ext .ts,.tsx .",
+		"lint:fix": "npm run lint -- --fix"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"dependencies": {
+		"@reduxjs/toolkit": "^1.9.2",
+		"@types/jest": "^27.5.2",
+		"@types/node": "^16.18.12",
+		"@types/react": "^18.0.27",
+		"@types/react-dom": "^18.0.10",
+		"axios": "^1.3.2",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.2.0",
+		"react-scripts": "5.0.1"
+	},
+	"devDependencies": {
+		"eslint": "^8.33.0",
+		"prettier": "^2.8.3",
+		"sass": "^1.58.0",
+		"typescript": "^4.9.5"
+	}
+}
