@@ -1,0 +1,17 @@
+.switcher {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	p {
+		color: var(--colors-text);
+		font-size: var(--fs-sm);
+		text-transform: capitalize;
+	}
+}
+
+.icon {
+	width: 16px;
+	height: 16px;
+}

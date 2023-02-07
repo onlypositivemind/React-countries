@@ -1,8 +1,15 @@
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from 'components';
+import { Details, HomePage } from 'pages';
+
 const App = () => {
 	return (
-		<div>
-			<p></p>
-		</div>
+		<Routes>
+			<Route path='/' element={<Layout />}>
+				<Route index element={<HomePage />} />
+				<Route path='/country/:name' element={<Details />} />
+			</Route>
+		</Routes>
 	);
 };
 

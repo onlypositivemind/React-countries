@@ -1,0 +1,22 @@
+.wrapper {
+
+	button {
+		margin-bottom: 50px;
+		padding: 7px 15px 7px 35px;
+		background-color: var(--colors-ui-base);
+		box-shadow: var(--shadow);
+		border-radius: var(--radii);
+		color: var(--color-text);
+		position: relative;
+	}
+}
+
+.icon {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	top: 50%;
+	left: 13px;
+	transform: translateY(-50%);
+	fill: var(--colors-text);
+}

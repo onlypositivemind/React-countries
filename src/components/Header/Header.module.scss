@@ -1,0 +1,21 @@
+.header {
+	box-shadow: var(--shadow);
+	background-color: var(--colors-ui-base);
+}
+
+.content {
+	margin: 0 auto;
+	padding: 15px;
+	max-width: 1230px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	h1 {
+		color: var(--colors-text);
+		font-weight: var(--fw-bold);
+		font-size: var(--fs-sm);
+		cursor: pointer;
+	}
+}

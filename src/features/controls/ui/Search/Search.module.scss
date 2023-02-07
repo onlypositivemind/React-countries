@@ -1,0 +1,29 @@
+.searchBlock, .searchBlock input {
+	background-color: var(--colors-ui-base);
+}
+
+.searchBlock {
+	padding: 15px 25px;
+	width: 280px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	border-radius: var(--radii);
+	box-shadow: var(--shadow);
+
+	input {
+		width: 100%;
+		font-size: var(--fs-sm);
+		color: var(--color-text);
+	}
+}
+
+.iconS, .iconC {
+	fill: var(--colors-text);
+	width: 15px;
+	height: 15px;
+}
+
+.iconC {
+	cursor: pointer;
+}
