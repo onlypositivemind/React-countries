@@ -29,19 +29,17 @@ const Neighbors = ({ borders = [] }: NeighborsProps) => {
 		<div className={s.borders}>
 			<span>Border Countries</span>
 			{statusNeighbors === 'loading' && <p>Loading...</p>}
-			{statusNeighbors === 'received' && (
-				<div>
-					{!borders.length ? (
-						<span className={s.noBorders}>There is no border countries</span>
-					) : (
-						neighbors.map((countryName) => (
-							<span key={countryName} className={s.border} onClick={() => navigate(`/country/${countryName}`)}>
-								{countryName}
-							</span>
-						))
-					)}
-				</div>
-			)}
+			<div>
+				{!borders.length ? (
+					<span className={s.noBorders}>There is no border countries</span>
+				) : (
+					neighbors.map((countryName) => (
+						<span key={countryName} className={s.border} onClick={() => navigate(`/country/${countryName}`)}>
+							{countryName}
+						</span>
+					))
+				)}
+			</div>
 		</div>
 	);
 };

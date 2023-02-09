@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { MouseEventHandler, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'store';
 import { controlsActions, selectRegion } from 'features/controls/index';
@@ -19,7 +19,7 @@ const CustomSelect = () => {
 		setVisible(false);
 	};
 
-	const handleClear: React.MouseEventHandler<SVGSVGElement> = (e) => {
+	const handleClear: MouseEventHandler<SVGSVGElement> = (e) => {
 		e.stopPropagation();
 		dispatch(controlsActions.setRegion(''));
 	};

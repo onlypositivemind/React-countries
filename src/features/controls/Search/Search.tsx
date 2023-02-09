@@ -1,4 +1,4 @@
-import React from 'react';
+import { ChangeEventHandler } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'store';
 import { controlsActions, selectSearch } from 'features/controls/index';
@@ -10,7 +10,7 @@ const Search = () => {
 	const dispatch = useAppDispatch();
 	const search = useSelector(selectSearch);
 
-	const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+	const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
 		dispatch(controlsActions.setSearch(e.target.value));
 	};
 

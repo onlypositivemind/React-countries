@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Country, Extra, Status } from 'types';
 
-export const loadCountryByName = createAsyncThunk<Country, string, { extra: Extra }>(
+export const loadCountryByName = createAsyncThunk<Country, string, { extra: Extra; rejectValue: string }>(
 	'@@details/load-country-by-name',
 	async (name, { extra: { client, api }, rejectWithValue }) => {
 		try {
-			const { data } = await client.get(api.searchByCountry(name));
+			const { data } = await client.get<Country[]>(api.searchByCountry(name));
 			return data[0];
 		} catch {
 			return rejectWithValue('Failed to fetch country');
@@ -17,7 +17,7 @@ export const loadNeighborsByBorder = createAsyncThunk<string[], string[], { extr
 	'@@details/load-neighbors',
 	async (borders, { extra: { client, api }, rejectWithValue }) => {
 		try {
-			const { data } = await client.get(api.filterByCode(borders));
+			const { data } = await client.get<Country[]>(api.filterByCode(borders));
 			return data.map((item: any) => item.name);
 		} catch {
 			return rejectWithValue('Failed to fetch neighbors');
@@ -36,10 +36,10 @@ interface DetailsState {
 
 const initialState: DetailsState = {
 	currentCountry: null,
-	neighbors: [],
 	errorCountry: null,
-	errorNeighbors: null,
 	statusCountry: 'idle',
+	neighbors: [],
+	errorNeighbors: null,
 	statusNeighbors: 'idle',
 };
 
@@ -68,13 +68,13 @@ const detailsSlice = createSlice({
 				state.statusNeighbors = 'loading';
 				state.errorNeighbors = null;
 			})
-			.addCase(loadNeighborsByBorder.fulfilled, (state, action: PayloadAction<string[]>) => {
-				state.statusNeighbors = 'received';
-				state.neighbors = action.payload || [];
-			})
 			.addCase(loadNeighborsByBorder.rejected, (state, action) => {
 				state.statusNeighbors = 'rejected';
 				state.errorNeighbors = action.payload as string;
+			})
+			.addCase(loadNeighborsByBorder.fulfilled, (state, action: PayloadAction<string[]>) => {
+				state.statusNeighbors = 'received';
+				state.neighbors = action.payload || [];
 			});
 	},
 });

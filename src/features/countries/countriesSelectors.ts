@@ -6,15 +6,8 @@ export const selectCountriesInfo = (state: RootState) => ({
 	qty: state.countries.list.length,
 });
 
-export const selectAllCountries = (state: RootState) => state.countries.list;
-
-export const selectVisibleCountries = (
-	state: RootState,
-	{ search = '', region = '' },
-) => {
+export const selectVisibleCountries = (state: RootState, { search = '', region = '' }) => {
 	return state.countries.list.filter(
-		(country) =>
-			country.name.toLowerCase().includes(search.toLowerCase()) &&
-			country.region.includes(region),
+		(country) => country.name.toLowerCase().includes(search.toLowerCase()) && country.region.includes(region),
 	);
 };
