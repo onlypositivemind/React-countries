@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'store';
 import { controlsActions, selectRegion } from 'features/controls/index';
+import { RegionType } from 'types';
 import { ReactComponent as ClearIcon } from 'assets/images/clear.svg';
-import { RegionType } from '../../model/types/region';
 import s from './CustomSelect.module.scss';
 
 const regions: RegionType[] = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];

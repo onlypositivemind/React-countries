@@ -9,11 +9,6 @@
 		"quotes": ["error", "single"],
 		"jsx-quotes": ["error", "prefer-single"],
 		"indent": ["warn", "tab"],
-		"max-len": [
-			"error", {
-				"code": 120
-			}
-		],
 		"comma-dangle": ["error", "always-multiline"],
 		"semi": ["warn", "always"],
 		"import/order": [

@@ -16,7 +16,7 @@
 	}
 }
 
-.info {
+.text {
 	padding: 15px 25px 35px;
 	font-size: var(--fs-md);
 	font-weight: var(--fw-bold);
@@ -26,20 +26,17 @@
 	margin-bottom: 15px;
 }
 
-.infoBlock, .descr {
-	display: flex;
-	gap: 5px;
-}
+.info {
+	flex-direction: column;
 
-.infoBlock {
-	align-items: center;
+	div {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
 }
 
 .descr {
-	flex-direction: column;
-}
-
-.subinfo {
 	font-weight: var(--fw-light);
 	font-size: var(--fs-sm);
 	line-height: 1.5;

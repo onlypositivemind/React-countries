@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Extra, Status } from 'types';
-import { Country } from '../types/country';
+import { Extra, Status, Country } from 'types';
 
 export const loadCountries = createAsyncThunk<Country[], undefined, { extra: Extra }>(
 	'@@countries/load-countries',
@@ -9,7 +8,7 @@ export const loadCountries = createAsyncThunk<Country[], undefined, { extra: Ext
 			const { data } = await client.get(api.ALL_COUNTRIES);
 			return data;
 		} catch {
-			return rejectWithValue('Failed to fetch all users');
+			return rejectWithValue('Failed to fetch all countries');
 		}
 	},
 );

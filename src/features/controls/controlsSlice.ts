@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RegionType } from '../types/region';
+import { RegionType } from 'types';
 
 interface ControlsState {
 	search: string;

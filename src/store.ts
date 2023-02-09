@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { themeReducer } from 'features/theme';
 import { controlsReducer } from 'features/controls';
 import { countriesReducer } from 'features/countries';
+import { detailsReducer } from 'features/details';
 
 import * as api from './config';
 
@@ -13,6 +14,7 @@ export const store = configureStore({
 		theme: themeReducer,
 		controls: controlsReducer,
 		countries: countriesReducer,
+		details: detailsReducer,
 	},
 	devTools: true,
 	middleware: (getDefaultMiddleware) =>

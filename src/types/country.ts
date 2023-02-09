@@ -1,4 +1,4 @@
-import { RegionType } from 'features/controls/model/types/region';
+import { RegionType } from 'types/region';
 
 interface Currency {
 	code: string;

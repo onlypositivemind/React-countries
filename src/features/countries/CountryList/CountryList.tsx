@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Loader } from 'components';
+import { Loader, CountryCard } from 'components';
 import { RootState, useAppDispatch } from 'store';
 import { selectControls } from 'features/controls';
 import { selectCountriesInfo, selectVisibleCountries } from 'features/countries';
-import { loadCountries } from '../../model/slice/countriesSlice';
-import Card from '../Card/Card';
+import { loadCountries } from '../countriesSlice';
 import s from './CountryList.module.scss';
 
 const CountryList = () => {
@@ -47,7 +46,7 @@ const CountryList = () => {
 							],
 						};
 
-						return <Card key={c.name} {...countryInfo} />;
+						return <CountryCard key={c.name} {...countryInfo} />;
 					})}
 				</ul>
 			)}
