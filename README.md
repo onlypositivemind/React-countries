@@ -1,5 +1,7 @@
+# Where is the world?
+
 ![readme.png](src/assets/images/readme.png)
-![img.png](src/assets/images/readme1.png)
+![readme1.png](src/assets/images/readme1.png)
 
 ### Реализовано: 
 * Асинхронное получение всех стран, одной страны и ее соседей
